@@ -38,11 +38,6 @@ func MatAdd(m1, m2 Matrix) Matrix {
 	return temparr
 }
 
-// func (m Matrix) getRows() int {
-// 	const arr = const (m.rows)
-// 	return arr
-// }
-
 //MatMultiply function multiplies two matrices (matrix product) and returns a matrix
 func MatMultiply(m1, m2 Matrix) Matrix {
 	arr := make([][]int, m1.Rows)
@@ -63,4 +58,21 @@ func MatMultiply(m1, m2 Matrix) Matrix {
 	}
 	temparr := Matrix{Rows: m1.Rows, Columns: m2.Columns, Data: arr}
 	return temparr
+}
+
+//Transpose transposes the Matrix and returns a new matrix
+func Transpose(m Matrix) Matrix {
+	arr := make([][]int, m.Columns)
+	for i := 0; i < m.Columns; i++ {
+		arr[i] = make([]int, m.Rows)
+	}
+
+	for i := 0; i < m.Rows; i++ {
+		for j := 0; j < m.Columns; j++ {
+			arr[j][i] = m.Data[i][j]
+		}
+	}
+
+	Result := Matrix{Rows: m.Columns, Columns: m.Rows, Data: arr}
+	return Result
 }
