@@ -10,6 +10,13 @@ Learning is fun. And applying things as you learn is even better.
 
 > Feel free to use it and help in adding more functions.
 
+## Using Go get:
+
+```bash
+Go get github.com/amanasci/matrixmath
+```
+
+
 ## Example: 
 
 
